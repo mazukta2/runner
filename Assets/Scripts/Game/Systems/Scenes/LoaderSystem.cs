@@ -48,8 +48,11 @@ namespace Game
                     continue;
 
                 var asyncOperation = SceneManager.UnloadSceneAsync(i);
-                while (!asyncOperation.isDone)
-                    yield return new WaitForEndOfFrame();
+                if (asyncOperation != null)
+                {
+                    while (!asyncOperation.isDone)
+                        yield return new WaitForEndOfFrame();
+                }
             }
         }
 
