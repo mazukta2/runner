@@ -10,10 +10,8 @@ namespace Game
     public class CharacterSelector : MonoBehaviour
     {
         [SerializeField] private CharactersSettingsData _CharactersSettings;
-        [SerializeField] private GameObject _CharacterPoint;
         [SerializeField] private Button _LeftButton;
         [SerializeField] private Button _RightButton;
-
         [SerializeField] private GameObject _CharacterPlaceholder;
 
         private List<CharacterView> _characters = new List<CharacterView>();
