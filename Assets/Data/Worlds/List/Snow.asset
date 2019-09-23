@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuViewPrefab: {fileID: -2611141341517257217, guid: 0adfb4873f3aa0c4590a073b25addd56,
     type: 3}
+  _scene: {fileID: 11400000, guid: 5da89073952cb6742aae5087b2bd8a87, type: 2}

@@ -53,6 +53,11 @@ namespace Game
             UpdateView();
         }
 
+        internal WorldData GetWorld()
+        {
+            return _worlds[_currentWorld].World;
+        }
+
         private void CreateWorlds()
         {
             foreach (var item in _WorldsSettings.Worlds)

@@ -348,9 +348,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a47f9009ec018445992e424932b98e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Loader: {fileID: 11400000, guid: 65de634a832c760448767f0c93053695, type: 2}
   _ToLevelSelectionButton: {fileID: 720916856}
+  _StartLevelButton: {fileID: 169224377}
   _Animator: {fileID: 233754670}
   _SelectionScreenAnimationTrigger: ToWorld
+  _CharacterSelector: {fileID: 1342984541}
+  _WorldSelector: {fileID: 1883022382}
 --- !u!1 &369928280
 GameObject:
   m_ObjectHideFlags: 0

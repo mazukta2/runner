@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934a7bdf2d59d1f4893162e367dc6fac, type: 3}
-  m_Name: Grass
+  m_Script: {fileID: 11500000, guid: 9da07cf7dd8d18047a25a50f824df586, type: 3}
+  m_Name: Snow
   m_EditorClassIdentifier: 
-  _menuViewPrefab: {fileID: 1051536531426246854, guid: ab19714098f2b4443b0f8bc39aab4991,
-    type: 3}
-  _scene: {fileID: 11400000, guid: 418cdf09f4ca9b148942382f76be81e8, type: 2}
+  _scenePath: Show

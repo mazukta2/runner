@@ -14,6 +14,11 @@ namespace Game
             StartCoroutine(LoadSceneCoroutine(Data.MainMenu));
         }
 
+        internal void LoadLevel(SceneData level)
+        {
+            StartCoroutine(LoadSceneCoroutine(level));
+        }
+
         private IEnumerator LoadSceneCoroutine(SceneData scene)
         {
             if (_isLoading)
@@ -55,7 +60,6 @@ namespace Game
                 }
             }
         }
-
     }
 
 }

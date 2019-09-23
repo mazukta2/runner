@@ -9,8 +9,10 @@ namespace Game
     public class WorldData : ScriptableObject
     {
         public MenuWorldView MenuPrefab => _menuViewPrefab;
+        public SceneData Scene => _scene;
 
         [SerializeField] MenuWorldView _menuViewPrefab;
+        [SerializeField] SceneData _scene;
     }
 
 }

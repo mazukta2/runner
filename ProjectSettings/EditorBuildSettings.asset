@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 6cef6811f95a0bd46953444d83668758
+  - enabled: 1
+    path: Assets/Scenes/Worlds/Hell.unity
+    guid: c02d832333fae1e489e01af568cf7228
+  - enabled: 1
+    path: Assets/Scenes/Worlds/Show.unity
+    guid: e708eb0824e6ed5458fbc8d014ea8323
+  - enabled: 1
+    path: Assets/Scenes/Worlds/Grass.unity
+    guid: 5a79d47f3629e8a499b17b53135ece73
   m_configObjects: {}
