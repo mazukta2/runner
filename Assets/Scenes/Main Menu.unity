@@ -348,6 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a47f9009ec018445992e424932b98e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Game: {fileID: 11400000, guid: c1929d9360b541041b5c9e7d08c38f94, type: 2}
   _Loader: {fileID: 11400000, guid: 65de634a832c760448767f0c93053695, type: 2}
   _ToLevelSelectionButton: {fileID: 720916856}
   _StartLevelButton: {fileID: 169224377}

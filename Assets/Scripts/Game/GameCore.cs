@@ -34,5 +34,13 @@ namespace Game
 
             return (T)result;
         }
+
+        public T[] GetSystemComponents<T>()
+        {
+            var result = new List<T>();
+
+
+            return result.ToArray();
+        }
     }
 }

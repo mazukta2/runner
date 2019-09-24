@@ -44,6 +44,11 @@ namespace Game
             ShowCharacter(_characters[_currentCharacter].Character);
         }
 
+        internal CharacterData GetCharacter()
+        {
+            return _characters[_currentCharacter].Character;
+        }
+
         private void OnRightClick()
         {
             _currentCharacter++;

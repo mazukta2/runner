@@ -8,6 +8,7 @@ namespace Game
 
     public class MainMenuScreens : MonoBehaviour
     {
+        [SerializeField] GameData _Game;
         [SerializeField] LoaderData _Loader;
         [SerializeField] Button _ToLevelSelectionButton;
         [SerializeField] Button _StartLevelButton;
@@ -39,6 +40,8 @@ namespace Game
 
         private void StartLevel()
         {
+            _Game.Instance.Session = new Session(_WorldSelector.GetWorld(), _CharacterSelector.GetCharacter());
+
             _Loader.Instance.LoadLevel(_WorldSelector.GetWorld().Scene);
         }
     }

@@ -3,22 +3,25 @@ using System.Collections;
 using Game;
 using System;
 
-public class MenuWorldView : MonoBehaviour
+namespace Game
 {
-    public WorldData World => _world;
-
-    [SerializeField] private GameObject _View;
-
-    private WorldData _world;
-
-
-    public void Show(bool value)
+    public class MenuWorldView : MonoBehaviour
     {
-        _View.SetActive(value);
-    }
+        public WorldData World => _world;
 
-    internal void Init(WorldData world)
-    {
-        _world = world;
+        [SerializeField] private GameObject _View;
+
+        private WorldData _world;
+
+        public void Show(bool value)
+        {
+            _View.SetActive(value);
+        }
+
+        internal void Init(WorldData world)
+        {
+            _world = world;
+        }
     }
 }
+
