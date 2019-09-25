@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399869183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: -0.02, z: 200}
+  m_LocalPosition: {x: 0.22, y: -0.02, z: 500}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 567798324}
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f603d6e12f74b42802a0ea2d58b4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Character: {fileID: 0}
+  _Target: {fileID: 0}
 --- !u!4 &567798324
 Transform:
   m_ObjectHideFlags: 0
@@ -415,15 +415,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232873841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76faa75178a870747a76353b3c9ae529, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a488e5732b77ac4aa6878fa5ccad18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Game: {fileID: 11400000, guid: c1929d9360b541041b5c9e7d08c38f94, type: 2}
-  _Prefab: {fileID: 2715871809727716341, guid: d23f7e42f66842b4fb2db3c147ff1002, type: 3}
-  _Point: {fileID: 567798322}
-  _Parts: 15
-  _PartSize: 4
-  _LeftCut: 20
+  _ElementPrefab: {fileID: 2342690402918359785, guid: d23f7e42f66842b4fb2db3c147ff1002,
+    type: 3}
+  _MovingPoint: {fileID: 567798322}
+  _PartsCount: 4
+  _PartSize: 3
+  _Offset: -10
 --- !u!1 &1274490692
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274490692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.25, z: 150}
+  m_LocalPosition: {x: 0, y: 1.41, z: 150}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2118547089}
@@ -464,14 +464,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1274490692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7711a0f0f7d0544fb8165f69483469a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a488e5732b77ac4aa6878fa5ccad18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Prefab: {fileID: 5004904575275278932, guid: 632ea5e3db0c829418b9f1862a3f40e4, type: 3}
-  _Point: {fileID: 567798322}
-  _Parts: 4
-  _PartSize: 16
-  _LeftCut: 60
+  _ElementPrefab: {fileID: 2342690402918359785, guid: 51a8efd86d2b2e945b11b59cfc1f51f1,
+    type: 3}
+  _MovingPoint: {fileID: 567798322}
+  _PartsCount: 4
+  _PartSize: 20
+  _Offset: -15
 --- !u!1 &1675626369
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675626369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.25, z: 100}
+  m_LocalPosition: {x: 0, y: 1.41, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2118547089}
@@ -512,14 +513,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1675626369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7711a0f0f7d0544fb8165f69483469a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a488e5732b77ac4aa6878fa5ccad18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Prefab: {fileID: 2380458911699768655, guid: 3860bd9790f689443b0006a0224e6607, type: 3}
-  _Point: {fileID: 567798322}
-  _Parts: 4
-  _PartSize: 16
-  _LeftCut: 60
+  _ElementPrefab: {fileID: 2342690402918359785, guid: b368446b5fd43c94eaa5d1909c7ca8c6,
+    type: 3}
+  _MovingPoint: {fileID: 567798322}
+  _PartsCount: 4
+  _PartSize: 20
+  _Offset: -15
 --- !u!1 &2118547088
 GameObject:
   m_ObjectHideFlags: 0

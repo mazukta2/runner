@@ -14,13 +14,13 @@ namespace Game
             var controllerGo = Instantiate(_ControllerPrefab, transform);
             controllerGo.transform.SetParent(transform);
 
-            var viewGo = Instantiate(_Game.Instance.Session.StartCharacter.Prefab.gameObject, controllerGo.transform);
+            var viewGo = Instantiate(_Game.Instance.Character.Prefab.gameObject, controllerGo.transform);
             var character = viewGo.GetComponent<Character>();
-            character.Data = _Game.Instance.Session.StartCharacter;
+            character.Data = _Game.Instance.Character;
 
             controllerGo.GetComponent<PlayerCharacterController>().Character = character;
 
-            _Camera.Character = viewGo;
+            _Camera.Target = viewGo;
         }
     }
 }

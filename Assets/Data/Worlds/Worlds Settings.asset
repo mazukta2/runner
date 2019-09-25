@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47125cd40219ef64e8c32511ff432998, type: 3}
   m_Name: Worlds Settings
   m_EditorClassIdentifier: 
-  _worldByDefault: {fileID: 11400000, guid: aa5068fbf7a85af47a71ce83cff5918c, type: 2}
-  _world:
+  _World:
   - {fileID: 11400000, guid: aa5068fbf7a85af47a71ce83cff5918c, type: 2}
   - {fileID: 11400000, guid: 7bb1298db8eea6f4fbf2b238b1f4577c, type: 2}
   - {fileID: 11400000, guid: b2335c1d1c600634083a8e802c97071b, type: 2}

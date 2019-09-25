@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934a7bdf2d59d1f4893162e367dc6fac, type: 3}
   m_Name: Hell
   m_EditorClassIdentifier: 
-  _menuViewPrefab: {fileID: 5334834557330041157, guid: 7e9a440053a29214a91a92e2db5ae665,
+  _MenuViewPrefab: {fileID: 5334834557330041157, guid: 7e9a440053a29214a91a92e2db5ae665,
     type: 3}
-  _scene: {fileID: 11400000, guid: 03da820e26fdd8d48b46b5999b7986c6, type: 2}
+  _Scene: {fileID: 11400000, guid: 03da820e26fdd8d48b46b5999b7986c6, type: 2}
+  _Obstacles: []
+  _Gravitation: {x: 0, y: 0}

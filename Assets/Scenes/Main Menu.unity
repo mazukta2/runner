@@ -152,10 +152,10 @@ RectTransform:
   m_Father: {fileID: 1463536537}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &169224375
 GameObject:
@@ -312,10 +312,10 @@ RectTransform:
   m_Father: {fileID: 98822576}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &233754670
 Animator:
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 233754668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a47f9009ec018445992e424932b98e4, type: 3}
+  m_Script: {fileID: 11500000, guid: fcc561032a203ef4cb58747812aa563f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Game: {fileID: 11400000, guid: c1929d9360b541041b5c9e7d08c38f94, type: 2}
@@ -631,8 +631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 400.50504}
-  m_SizeDelta: {x: 1500, y: 192.11005}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &592408034
 MonoBehaviour:
@@ -1141,14 +1141,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342984539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92e5642fd91ccd4bbdab36260796847, type: 3}
+  m_Script: {fileID: 11500000, guid: dd0ca39c8e0ab204291a9334f109d659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _CharactersSettings: {fileID: 11400000, guid: 13c3e8680f2950b4bb6fa456a25ca9c3,
-    type: 2}
   _LeftButton: {fileID: 800116281}
   _RightButton: {fileID: 1433833032}
-  _CharacterPlaceholder: {fileID: 947507931}
+  _Placeholder: {fileID: 947507931}
+  _CharactersSettings: {fileID: 11400000, guid: 13c3e8680f2950b4bb6fa456a25ca9c3,
+    type: 2}
 --- !u!225 &1342984542
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1561,13 +1561,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1883022379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92b392e19283b343acfd76044356062, type: 3}
+  m_Script: {fileID: 11500000, guid: 6770c2bc95630e7459a3c7d944383a57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _WorldsSettings: {fileID: 11400000, guid: 9c0f7bb680083404da0ce782b4cd859e, type: 2}
   _LeftButton: {fileID: 1699259389}
   _RightButton: {fileID: 657615369}
-  _WorldPlaceholder: {fileID: 796568787}
+  _Placeholder: {fileID: 796568787}
+  _WorldsSettings: {fileID: 11400000, guid: 9c0f7bb680083404da0ce782b4cd859e, type: 2}
 --- !u!1 &2118547088
 GameObject:
   m_ObjectHideFlags: 0

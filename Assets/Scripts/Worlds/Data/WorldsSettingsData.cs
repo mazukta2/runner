@@ -8,11 +8,9 @@ namespace Game
     [CreateAssetMenu(menuName = "Game/Worlds/Settings")]
     public class WorldsSettingsData : ScriptableObject
     {
-        public WorldData WorldByDefault => _worldByDefault;
-        public WorldData[] Worlds => _world;
+        public WorldData[] Worlds => _World;
 
-        [SerializeField] WorldData _worldByDefault;
-        [SerializeField] WorldData[] _world;
+        [SerializeField] WorldData[] _World;
     }
 
 }

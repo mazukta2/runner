@@ -8,13 +8,15 @@ namespace Game
     [CreateAssetMenu(menuName = "Game/Worlds/World")]
     public class WorldData : ScriptableObject
     {
-        public MenuWorldView MenuPrefab => _menuViewPrefab;
-        public SceneData Scene => _scene;
-        public GameObject[] Obstacles => _obstacles;
+        public World MenuPrefab => _MenuViewPrefab;
+        public SceneData Scene => _Scene;
+        public GameObject[] Obstacles => _Obstacles;
+        public Vector2 Gravitation => _Gravitation;
 
-        [SerializeField] MenuWorldView _menuViewPrefab;
-        [SerializeField] SceneData _scene;
-        [SerializeField] GameObject[] _obstacles;
+        [SerializeField] World _MenuViewPrefab;
+        [SerializeField] SceneData _Scene;
+        [SerializeField] GameObject[] _Obstacles;
+        [SerializeField] Vector2 _Gravitation;
     }
 
 }
