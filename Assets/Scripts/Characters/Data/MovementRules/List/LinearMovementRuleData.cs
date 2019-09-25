@@ -15,11 +15,11 @@ namespace Game
         {
             var forceController = view.GetComponent<MovementInertion>();
             forceController.SetForceLimit(new Vector2(_MaxSpeed, _MaxSpeed));
-            forceController.SetGravitation(1f);
+            forceController.SetGravitation(3f);
 
             forceController.AddForce(new Vector2(_MaxSpeed, 0));
 
-            var isGrounded = view.transform.position.y == 0;
+            var isGrounded = view.transform.position.y <= 0.2f;
             if (isGrounded && jumpButton)
             {
                 forceController.AddForce(new Vector2(0, _JumpForce));

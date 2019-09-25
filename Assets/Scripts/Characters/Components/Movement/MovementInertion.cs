@@ -44,7 +44,14 @@ namespace Game
         {
             transform.position += Force * Time.deltaTime;
 
-            _Force = new Vector2(_Force.x, Mathf.Max(Force.y - _Gravitation, 0));
+            if (transform.position.y > 0)
+            {
+                transform.position += new Vector3(0, -_Gravitation) * Time.deltaTime;
+            }
+
+            // y force decline
+            var yForceDecline = 4f * Time.deltaTime;
+            _Force = new Vector2(_Force.x, Mathf.Max(Force.y - yForceDecline, 0));
         }
     }
 }
