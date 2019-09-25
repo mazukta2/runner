@@ -10,9 +10,11 @@ namespace Game
     {
         public MenuWorldView MenuPrefab => _menuViewPrefab;
         public SceneData Scene => _scene;
+        public GameObject[] Obstacles => _obstacles;
 
         [SerializeField] MenuWorldView _menuViewPrefab;
         [SerializeField] SceneData _scene;
+        [SerializeField] GameObject[] _obstacles;
     }
 
 }

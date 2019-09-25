@@ -7,7 +7,7 @@ namespace Game
 {
     public abstract class MovementRuleData : ScriptableObject
     {
-        public abstract void UpdatePosition(CharacterView view);
+        public abstract void UpdatePosition(Character view, bool jumpButton);
     }
 
 }

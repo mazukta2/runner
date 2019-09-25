@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 namespace Game
 {
-    public class BackgroundSpawner : MonoBehaviour
+    public class ObstaclesSpawner : MonoBehaviour
     {
+        [SerializeField] private GameData _Game;
         [SerializeField] private GameObject _Prefab;
         [SerializeField] private GameObject _Point;
         [SerializeField] private int _Parts;
@@ -22,6 +23,8 @@ namespace Game
                 var go = Instantiate(_Prefab, transform);
                 go.transform.localPosition = new Vector3(i * _PartSize, 0);
                 _spawned.Add(go);
+                go.GetComponent<ObstaclePlaceholder>().World = _Game.Instance.Session.World;
+                go.GetComponent<ObstaclePlaceholder>().Respawn();
             }
         }
 
@@ -37,7 +40,8 @@ namespace Game
                 _spawned.Add(left);
 
                 left.transform.localPosition = new Vector3(right.transform.localPosition.x + _PartSize, 0);
-            } 
+                left.GetComponent<ObstaclePlaceholder>().Respawn();
+            }
         }
 
     }

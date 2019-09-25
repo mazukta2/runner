@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2259191760486d46940996260d40f16, type: 3}
   m_Name: Triangle
   m_EditorClassIdentifier: 
-  _viewPrefab: {fileID: -275955985889292530, guid: 85118474eccb04a4c9453871dc3e1d8d,
+  _Prefab: {fileID: -4792762267373225163, guid: 85118474eccb04a4c9453871dc3e1d8d,
     type: 3}
   _movement: {fileID: 11400000, guid: d0e9b300789376342917468c4e2273ad, type: 2}

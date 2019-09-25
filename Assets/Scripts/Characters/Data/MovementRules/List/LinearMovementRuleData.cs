@@ -9,10 +9,21 @@ namespace Game
     public class LinearMovementRuleData : MovementRuleData
     {
         [SerializeField] private float _MaxSpeed;
+        [SerializeField] private float _JumpForce;
 
-        public override void UpdatePosition(CharacterView view)
+        public override void UpdatePosition(Character view, bool jumpButton)
         {
-            view.transform.position += new Vector3(_MaxSpeed * Time.deltaTime, 0);
+            var forceController = view.GetComponent<MovementInertion>();
+            forceController.SetForceLimit(new Vector2(_MaxSpeed, _MaxSpeed));
+            forceController.SetGravitation(1f);
+
+            forceController.AddForce(new Vector2(_MaxSpeed, 0));
+
+            var isGrounded = view.transform.position.y == 0;
+            if (isGrounded && jumpButton)
+            {
+                forceController.AddForce(new Vector2(0, _JumpForce));
+            }
         }
     }
 

@@ -10,9 +10,11 @@ namespace Game
     {
         public SceneData InitScene => _initScene;
         public SceneData MainMenu => _mainMenu;
+        public SceneData FailScene => _failScene;
 
         [SerializeField] SceneData _initScene;
         [SerializeField] SceneData _mainMenu;
+        [SerializeField] SceneData _failScene;
     }
 
 }

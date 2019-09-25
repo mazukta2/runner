@@ -15,3 +15,5 @@ MonoBehaviour:
   _menuViewPrefab: {fileID: 1051536531426246854, guid: ab19714098f2b4443b0f8bc39aab4991,
     type: 3}
   _scene: {fileID: 11400000, guid: 418cdf09f4ca9b148942382f76be81e8, type: 2}
+  _obstacles:
+  - {fileID: 8248839021564568317, guid: 28a86c45e26f3074f82e3563ab1a3721, type: 3}

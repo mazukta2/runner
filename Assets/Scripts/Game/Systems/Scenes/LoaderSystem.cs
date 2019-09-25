@@ -30,11 +30,14 @@ namespace Game
 
                 yield return StartCoroutine(ClearAll());
 
-                var asyncOperation = scene.LoadAsync();
-                if (asyncOperation != null)
+                if (!SceneManager.GetSceneByName(scene.Path).isLoaded)
                 {
-                    while (!asyncOperation.isDone)
-                        yield return new WaitForEndOfFrame();
+                    var asyncOperation = SceneManager.LoadSceneAsync(scene.Path, LoadSceneMode.Additive);
+                    if (asyncOperation != null)
+                    {
+                        while (!asyncOperation.isDone)
+                            yield return new WaitForEndOfFrame();
+                    }
                 }
             }
             finally
@@ -47,16 +50,20 @@ namespace Game
         {
             for (int i = 0; i < SceneManager.sceneCount; i++)
             {
-                var scene = SceneManager.GetSceneByBuildIndex(i);
+                var scene = SceneManager.GetSceneAt(i);
+                if (scene == null || !scene.isLoaded)
+                    continue;
+
                 // Init scene is always runs
                 if (Data.InitScene.IsScene(scene))
                     continue;
 
-                var asyncOperation = SceneManager.UnloadSceneAsync(i);
+                var asyncOperation = SceneManager.UnloadSceneAsync(scene);
                 if (asyncOperation != null)
                 {
                     while (!asyncOperation.isDone)
                         yield return new WaitForEndOfFrame();
+
                 }
             }
         }

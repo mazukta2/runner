@@ -14,7 +14,7 @@ namespace Game
         [SerializeField] private Button _RightButton;
         [SerializeField] private GameObject _CharacterPlaceholder;
 
-        private List<CharacterView> _characters = new List<CharacterView>();
+        private List<Character> _characters = new List<Character>();
         private int _currentCharacter;
 
         private void Start()
@@ -41,12 +41,12 @@ namespace Game
             if (_currentCharacter < 0)
                 _currentCharacter = _characters.Count - 1;
 
-            ShowCharacter(_characters[_currentCharacter].Character);
+            ShowCharacter(_characters[_currentCharacter].Data);
         }
 
         internal CharacterData GetCharacter()
         {
-            return _characters[_currentCharacter].Character;
+            return _characters[_currentCharacter].Data;
         }
 
         private void OnRightClick()
@@ -55,17 +55,18 @@ namespace Game
             if (_currentCharacter > _characters.Count - 1)
                 _currentCharacter = 0;
 
-            ShowCharacter(_characters[_currentCharacter].Character);
+            ShowCharacter(_characters[_currentCharacter].Data);
         }
 
         private void CreateCharacters()
         {
             foreach (var item in _CharactersSettings.Characters)
             {
-                var go = Instantiate(item.ViewPrefab, _CharacterPlaceholder.transform);
-                var view = go.GetComponent<CharacterView>();
-                view.Init(item);
-                view.Show(false);
+                var go = Instantiate(item.Prefab, _CharacterPlaceholder.transform);
+                var view = go.GetComponent<Character>();
+                view.Data = item;
+                var hidder = go.GetComponent<GameObjectHidder>();
+                hidder.Show(false);
                 _characters.Add(view);
             }
         }
@@ -73,7 +74,7 @@ namespace Game
         private void SetDefaultCharacter()
         {
             _currentCharacter = _characters.IndexOf(
-                _characters.First(x => x.Character == _CharactersSettings.CharacterByDefault));
+                _characters.First(x => x.Data == _CharactersSettings.CharacterByDefault));
             ShowCharacter(_CharactersSettings.CharacterByDefault);
         }
 
@@ -81,7 +82,8 @@ namespace Game
         {
             foreach (var item in _characters)
             {
-                item.Show(item.Character == character);
+                var hidder = item.GetComponent<GameObjectHidder>();
+                hidder.Show(item.Data == character);
             }
         }
     }

@@ -8,10 +8,10 @@ namespace Game
     [CreateAssetMenu(menuName = "Game/Characters/Character")]
     public class CharacterData : ScriptableObject
     {
-        public CharacterView ViewPrefab => _viewPrefab;
+        public Character Prefab => _Prefab;
         public MovementRuleData MovementRule => _movement;
 
-        [SerializeField] CharacterView _viewPrefab;
+        [SerializeField] Character _Prefab;
         [SerializeField] MovementRuleData _movement;
         
     }

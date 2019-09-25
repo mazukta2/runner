@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2259191760486d46940996260d40f16, type: 3}
   m_Name: Circle
   m_EditorClassIdentifier: 
-  _viewPrefab: {fileID: 4354181478729677887, guid: f92675fac078dcd4f8f443fb04d69791,
-    type: 3}
+  _Prefab: {fileID: 4996409038941732939, guid: f92675fac078dcd4f8f443fb04d69791, type: 3}
   _movement: {fileID: 11400000, guid: d0e9b300789376342917468c4e2273ad, type: 2}

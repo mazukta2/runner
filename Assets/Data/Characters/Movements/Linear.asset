@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Linear
   m_EditorClassIdentifier: 
   _MaxSpeed: 4
+  _JumpForce: 2

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initScene: {fileID: 11400000, guid: 7b58b974f8a80c44dbb8f1ad0e972782, type: 2}
   _mainMenu: {fileID: 11400000, guid: 7ab70c3ae94751847b9004b0e2fe347c, type: 2}
+  _failScene: {fileID: 11400000, guid: e74a25e17dc4f6743b585128d0ef9ad6, type: 2}

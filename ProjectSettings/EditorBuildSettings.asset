@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Worlds/Grass.unity
     guid: 5a79d47f3629e8a499b17b53135ece73
+  - enabled: 1
+    path: Assets/Scenes/Fail.unity
+    guid: 194eb43e449d23344aca337c3e8eddbd
   m_configObjects: {}
