@@ -61,8 +61,9 @@ GameObject:
   m_Component:
   - component: {fileID: 471920195806130131}
   - component: {fileID: 5325447324156004452}
+  - component: {fileID: 308042257975003874}
   m_Layer: 0
-  m_Name: Rectangle
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,6 +131,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &308042257975003874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6970173539987509352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1c20d6b6b42664e80e0d085546d933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Color1: {r: 0.8490566, g: 0.7080724, b: 0.1481844, a: 1}
+  _Color2: {r: 0.745283, g: 0.58302456, b: 0.48162156, a: 1}
+  _Value: 0
 --- !u!1 &7721285671700255917
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +160,7 @@ GameObject:
   - component: {fileID: 2740414780443621772}
   - component: {fileID: -7749765693577404860}
   - component: {fileID: -5835677971102228842}
+  - component: {fileID: -5608153291091436059}
   m_Layer: 5
   m_Name: Circle
   m_TagString: Untagged
@@ -250,5 +267,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407143f7b18ef8d4290a316e6572a2bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Force: {x: 0, y: 0}
-  _ForceLimit: {x: 0, y: 0}
+  _Settings: {fileID: 0}
+  _CollisionFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 512
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+--- !u!114 &-5608153291091436059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721285671700255917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a947bf4d349f01f4bb930ad4d6b9052c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Physics: {fileID: -5835677971102228842}
+  _Animator: {fileID: 5627429497431049678}
+  _GroundedKey: IsGrounded
+  _RunningKey: Running

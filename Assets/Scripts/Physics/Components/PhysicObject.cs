@@ -9,53 +9,63 @@ namespace Game
     {
         private const float GroundNormal = 1;
 
+        public Vector2 Force { get => _force; set => _force = value; }
+        public bool IsGrounded => _isGrounded;
+        public PhysicSettingsData Settings { get => _Settings; set => _Settings = value; }
+
         [SerializeField] private PhysicSettingsData _Settings;
-        [SerializeField] public ContactFilter2D _CollisionFilter;
+        [SerializeField] private ContactFilter2D _CollisionFilter;
 
         private Vector2 _force;
-        private Rigidbody2D _rigidbody;
+        private Collider2D _collider;
         private bool _isGrounded;
 
         protected void Start()
         {
-            _rigidbody = GetComponent<Rigidbody2D>();
+            _collider = GetComponent<Collider2D>();
         }
 
         protected void Update()
         {
-            var direction = (_force + _Settings.Gravitation) * Time.deltaTime;
+            if (!_Settings)
+                return;
 
-            var hits = new RaycastHit2D[6];
-            int count = _rigidbody.Cast(direction, _CollisionFilter,
-                hits, direction.magnitude);
+            // Gravitation. Adding G per second.
+            _force += _Settings.Gravitation * Time.deltaTime;
 
-            for (int i = 0; i < hits.Length; i++)
+            // Moving to position
+            transform.Translate(_force * Time.deltaTime);
+
+            // Collision calcultations
+            _isGrounded = false;
+            var hits = new Collider2D[6];
+            int count = _collider.OverlapCollider(_CollisionFilter, hits);
+            for (int i = 0; i < count; i++)
             {
-                Vector2 currentNormal = hits[i].normal;
-                
-                if (currentNormal.y > GroundNormal)
-                    _isGrounded = true;
+                var hit = hits[i];
+                var colliderDistance = hit.Distance(_collider);
 
-                var projection = Vector2.Dot(direction.normalized, currentNormal);
-                if (projection < 0)
+                if (colliderDistance.isOverlapped)
                 {
-                    direction = direction - projection * currentNormal;
+                    // Pushing backward
+                    transform.Translate(colliderDistance.pointA - colliderDistance.pointB);
+
+                    // Grounded if collider beneath
+                    if (Vector2.Angle(colliderDistance.normal, Vector2.up) < 90 && _force.y < 0)
+                    {
+                        _isGrounded = true;
+
+                        if (_force.y < 0) // Blocking falling
+                            _force.y = 0;
+                    }
                 }
             }
 
-            transform.position += (Vector3)direction;
-
-        }
-
-        public void AddForce(Vector2 force)
-        {
-            _force += force;
-
-            if (_force.x > _Settings.MaximumForce.x)
-                _force = new Vector2(_Settings.MaximumForce.x, _force.y);
-
-            if (_force.y > _Settings.MaximumForce.y)
-                _force = new Vector2(_force.x, _Settings.MaximumForce.y);
+            //if (_isGrounded)
+            //{
+            //    if (_force.y < 0) // Blocking falling
+            //        _force.y = 0;
+            //}
         }
     }
 }

@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 3}
   _Scene: {fileID: 11400000, guid: 5da89073952cb6742aae5087b2bd8a87, type: 2}
   _Obstacles: []
-  _Gravitation: {x: 0, y: 0}
+  _Physics: {fileID: 11400000, guid: 631e841ec6087f744aaf5a7ede178e79, type: 2}

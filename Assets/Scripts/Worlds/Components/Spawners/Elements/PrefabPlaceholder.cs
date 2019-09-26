@@ -16,7 +16,7 @@ namespace Game
 
         public override void Replaced()
         {
-            if (_RespawnOnRelocation)
+            if (!_RespawnOnRelocation)
                 return;
 
             Spawn();
@@ -27,7 +27,8 @@ namespace Game
             for (int i = 0; i < transform.childCount; i++)
                 Destroy(transform.GetChild(i).gameObject);
 
-            var obstacle = _Prefabs[UnityEngine.Random.Range(0, _Prefabs.Length - 1)];
+            var index = UnityEngine.Random.Range(0, _Prefabs.Length);
+            var obstacle = _Prefabs[index];
             Instantiate(obstacle, transform);
         }
     }

@@ -11,6 +11,7 @@ public class CharacterCamera : MonoBehaviour
         if (!Target)
             return;
 
-        transform.position = Target.transform.position;
+        transform.position = new Vector3(Target.transform.position.x, 
+            transform.position.y);
     }
 }

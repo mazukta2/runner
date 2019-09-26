@@ -45,4 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Prefabs:
   - {fileID: 8248839021564568317, guid: 28a86c45e26f3074f82e3563ab1a3721, type: 3}
+  - {fileID: 8248839021564568317, guid: 4e2722187e0d6aa44a13d79bfde7d833, type: 3}
+  - {fileID: 8248839021564568317, guid: 791577f6502e5c047b4cb77fb110ba64, type: 3}
   _RespawnOnRelocation: 1

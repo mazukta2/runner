@@ -11,12 +11,12 @@ namespace Game
         public World MenuPrefab => _MenuViewPrefab;
         public SceneData Scene => _Scene;
         public GameObject[] Obstacles => _Obstacles;
-        public Vector2 Gravitation => _Gravitation;
+        public PhysicSettingsData Physics => _Physics;
 
         [SerializeField] World _MenuViewPrefab;
         [SerializeField] SceneData _Scene;
         [SerializeField] GameObject[] _Obstacles;
-        [SerializeField] Vector2 _Gravitation;
+        [SerializeField] PhysicSettingsData _Physics;
     }
 
 }

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2259191760486d46940996260d40f16, type: 3}
-  m_Name: Triangle
+  m_Script: {fileID: 11500000, guid: 9c12842fe39b3dd43ae5500a31dfcb8c, type: 3}
+  m_Name: Fast
   m_EditorClassIdentifier: 
-  _Prefab: {fileID: -4792762267373225163, guid: 85118474eccb04a4c9453871dc3e1d8d,
-    type: 3}
-  _movement: {fileID: 11400000, guid: 33016e5cac85a854795ab0af3fec111e, type: 2}
+  _Acceleration: 0.5
+  _MaxSpeed: 8
+  _JumpHeight: 4
