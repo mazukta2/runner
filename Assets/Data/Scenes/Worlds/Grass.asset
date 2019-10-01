@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Grass
   m_EditorClassIdentifier: 
   _scenePath: Grass
+  _Layer: {fileID: 11400000, guid: c27bee667faa7bb42aafa58115150b9b, type: 2}
+  _Requires:
+  - {fileID: 11400000, guid: 4fdd103bce7fd1e47ae0c5a6aed77b2d, type: 2}

@@ -7,7 +7,8 @@ namespace Game
     // Provide an access to global entities of the game. 
     public abstract class ScriptableObjectSingletonData<T> : ScriptableObject
     {
-        public virtual T Instance => GameCore.Instance.GetDataSingletonInstance<T>(this);
+        public virtual T Instance => GameCore.Instance
+            .GetDataSingletonInstance<T>(this);
 
         public abstract T CreateInstance(GameCore gameController);
     }

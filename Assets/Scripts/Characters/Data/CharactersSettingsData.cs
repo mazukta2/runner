@@ -8,9 +8,9 @@ namespace Game
     [CreateAssetMenu(menuName = "Game/Characters/Settings")]
     public class CharactersSettingsData : ScriptableObject
     {
-        public CharacterData[] Characters => _characters;
+        public CharacterData[] Characters => _Characters;
 
-        [SerializeField] CharacterData[] _characters;
+        [SerializeField] CharacterData[] _Characters;
     }
 
 }

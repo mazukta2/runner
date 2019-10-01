@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1022380398276876015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baf7fd3c4efc7404aa3ec76b939d24f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 431ca3e6b3bffa84fba61464999d425f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Character: {fileID: 0}
+  _Mover: {fileID: 3783325056256040277}
 --- !u!114 &3783325056256040277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,18 +57,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da5e34f8a5f30649bdef10d0f7c07fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _CollisionFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  _Loader: {fileID: 11400000, guid: 65de634a832c760448767f0c93053695, type: 2}

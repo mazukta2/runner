@@ -12,22 +12,21 @@ namespace Game
         [SerializeField] private float _MaxSpeed;
         [SerializeField] private float _JumpHeight;
 
-        public override void UpdatePosition(Character view, bool jumpButton)
+        public override void Move(CharacterController character, bool jump)
         {
-            var forceController = view.GetComponent<PhysicObject>();
+            //var physic = character.Physic;
 
-            //if (forceController.IsGrounded)
-            {
-                var speed = Mathf.Min(forceController.Force.x + _Acceleration * Time.deltaTime, _MaxSpeed);
-                forceController.Force = new Vector2(speed, forceController.Force.y);
-            }
+            //var speed = physic.Force.x;
+            //speed += _Acceleration * Time.deltaTime;
+            //speed = Mathf.Min(speed, _MaxSpeed);
+            //physic.Force = new Vector2(speed, physic.Force.y);
 
-            if (forceController.IsGrounded && jumpButton)
-            {
-                forceController.Force += new Vector2(0, 
-                    Mathf.Sqrt(2 * _JumpHeight *
-                    Mathf.Abs(forceController.Settings.Gravitation.y)));
-            }
+            //if (physic.IsGrounded && jump)
+            //{
+            //    physic.Force += new Vector2(0, 
+            //        Mathf.Sqrt(2 * _JumpHeight *
+            //        Mathf.Abs(physic.Settings.Gravitation.y)));
+            //}
         }
     }
 

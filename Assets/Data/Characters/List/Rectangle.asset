@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2259191760486d46940996260d40f16, type: 3}
   m_Name: Rectangle
   m_EditorClassIdentifier: 
-  _Prefab: {fileID: 315851517843012274, guid: 1b891aec667210c41a333c6f005979d7, type: 3}
-  _movement: {fileID: 11400000, guid: d0e9b300789376342917468c4e2273ad, type: 2}
+  _Controller: {fileID: 6165872863672228352, guid: 59e87b435b81d1c428ddc11bc164cfa4,
+    type: 3}
+  _Model: {fileID: 315851517843012274, guid: 1b891aec667210c41a333c6f005979d7, type: 3}

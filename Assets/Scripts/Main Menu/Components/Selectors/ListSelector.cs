@@ -10,14 +10,13 @@ namespace Game
         where TData : ScriptableObject
         where TComponent : MonoBehaviour
     {
-        public TData CurrentElementData => _elements[_currentElement].Data.Data;
+        public abstract TData CurrentElementData { get; protected set; }
 
         [SerializeField] private Button _LeftButton;
         [SerializeField] private Button _RightButton;
         [SerializeField] private GameObject _Placeholder;
 
         private List<ListElement> _elements = new List<ListElement>();
-        private int _currentElement;
 
         private void Start()
         {
@@ -41,18 +40,28 @@ namespace Game
 
         private void OnLeftClick()
         {
-            _currentElement--;
-            if (_currentElement < 0)
-                _currentElement = _elements.Count - 1;
+            var currentElement = _elements
+                .FindIndex(x => x.Data.Data == CurrentElementData);
+
+            currentElement--;
+            if (currentElement < 0)
+                currentElement = _elements.Count - 1;
+
+            CurrentElementData = _elements[currentElement].Data.Data;
 
             UpdateView();
         }
 
         private void OnRightClick()
         {
-            _currentElement++;
-            if (_currentElement > _elements.Count - 1)
-                _currentElement = 0;
+            var currentElement = _elements
+                .FindIndex(x => x.Data.Data == CurrentElementData);
+
+            currentElement++;
+            if (currentElement > _elements.Count - 1)
+                currentElement = 0;
+
+            CurrentElementData = _elements[currentElement].Data.Data;
 
             UpdateView();
         }
@@ -77,7 +86,7 @@ namespace Game
         {
             foreach (var item in _elements)
             {
-                item.Hidder.Show(item.Data.Data == _elements[_currentElement].Data.Data);
+                item.Hidder.Show(item.Data.Data == CurrentElementData);
             }
         }
 

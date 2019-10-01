@@ -9,7 +9,7 @@ namespace Game
     [RequireComponent(typeof(Button))]
     public class ToMainMenuButton : MonoBehaviour
     {
-        [SerializeField] public LoaderData _Loader;
+        [SerializeField] public SceneData _MainMenu;
 
         private Button _button;
 
@@ -27,7 +27,7 @@ namespace Game
 
         private void ToMainMenu()
         {
-            _Loader.Instance.LoadLevel(_Loader.MainMenu);
+            _MainMenu.Load();
         }
     }
 

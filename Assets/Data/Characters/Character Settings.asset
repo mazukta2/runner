@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d49f005662828c439c2336a259e09ef, type: 3}
   m_Name: Character Settings
   m_EditorClassIdentifier: 
-  _characterByDefault: {fileID: 11400000, guid: 93a70be410fd7a747aeb082b3fab95d6,
-    type: 2}
-  _characters:
+  _Characters:
   - {fileID: 11400000, guid: 93a70be410fd7a747aeb082b3fab95d6, type: 2}
   - {fileID: 11400000, guid: 32e9e1b5c5aad394bba23604726006eb, type: 2}
   - {fileID: 11400000, guid: 6e7ce4f8d4159fe43bfaf85b8726977a, type: 2}

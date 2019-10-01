@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: -7749765693577404860}
   - component: {fileID: -5835677971102228842}
   - component: {fileID: -5608153291091436059}
+  - component: {fileID: 7742365659746124119}
   m_Layer: 5
   m_Name: Circle
   m_TagString: Untagged
@@ -205,9 +206,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7721285671700255917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96750f1792bf1b4f855e003f97e9006, type: 3}
+  m_Script: {fileID: 11500000, guid: ea5e3fd4cd7485d408c688b087d43fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Physics: {fileID: -5835677971102228842}
+  _Hitable: {fileID: 7742365659746124119}
 --- !u!61 &2740414780443621772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -298,3 +301,29 @@ MonoBehaviour:
   _Animator: {fileID: 5627429497431049678}
   _GroundedKey: IsGrounded
   _RunningKey: Running
+--- !u!114 &7742365659746124119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7721285671700255917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bd127aabcfb234c8f0c38adc019631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _CollisionFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0

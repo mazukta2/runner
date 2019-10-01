@@ -12,32 +12,26 @@ namespace Game
         [SerializeField] private float _MaxSpeed;
         [SerializeField] private float _JumpHeight;
 
-        public override void UpdatePosition(Character view, bool jumpButton)
+        public override void Move(CharacterController character, bool jump)
         {
-            var forceController = view.GetComponent<PhysicObject>();
+            //var physic = character.Physic;
+            //var speed = physic.Force.x;
+            //if (speed < _MaxSpeed / 2)
+            //    speed += _Acceleration * Time.deltaTime;
+            //else
+            //    speed = Mathf.MoveTowards(speed, 
+            //        Mathf.Pow(speed, 2), Time.deltaTime);
 
-            //if (forceController.IsGrounded)
-            {
-                var speed = forceController.Force.x;
+            //speed = Mathf.Min(speed, _MaxSpeed);
+            //physic.Force = new Vector2(speed, physic.Force.y);
 
-                if (speed < _MaxSpeed / 2)
-                {
-                    speed += _Acceleration * Time.deltaTime;
-                }
-                else
-                {
-                    speed = Mathf.MoveTowards(speed, Mathf.Pow(speed, 2), Time.deltaTime);
-                }
-                speed = Mathf.Min(speed, _MaxSpeed);
-                forceController.Force = new Vector2(speed, forceController.Force.y);
-            }
-
-            if (forceController.IsGrounded && jumpButton)
-            {
-                forceController.Force += new Vector2(0,
-                    Mathf.Sqrt(2 * _JumpHeight *
-                    Mathf.Abs(forceController.Settings.Gravitation.y)));
-            }
+            //// TODO: Jumping logic working same as in linear movement
+            //if (physic.IsGrounded && jump)
+            //{
+            //    physic.Force += new Vector2(0,
+            //        Mathf.Sqrt(2 * _JumpHeight *
+            //        Mathf.Abs(physic.Settings.Gravitation.y)));
+            //}
         }
     }
 

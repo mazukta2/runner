@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterCamera : MonoBehaviour
+namespace Game
 {
-    public GameObject Target { get => _Target; set => _Target = value; }
-    [SerializeField] private GameObject _Target;
-
-    private void LateUpdate()
+    // Camera following a character
+    public class CharacterCamera : MonoBehaviour
     {
-        if (!Target)
-            return;
+        [SerializeField] private CharacterControllerProvider _Provider;
 
-        transform.position = new Vector3(Target.transform.position.x, 
-            transform.position.y);
+        protected void LateUpdate()
+        {
+            if (!_Provider.Controller) return;
+
+            transform.position = new Vector3(
+                _Provider.Controller.Model.transform.position.x,
+                transform.position.y);
+        }
     }
+
 }

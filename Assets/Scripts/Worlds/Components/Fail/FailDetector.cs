@@ -2,27 +2,27 @@
 using System.Collections;
 using Game;
 
-public class FailDetector : MonoBehaviour
+namespace Game
 {
-    public Character Character { get => _Character; set => _Character = value; }
-
-    [SerializeField] private LoaderData _Loader;
-    [SerializeField] private ContactFilter2D _CollisionFilter;
-    [SerializeField] private Character _Character;
-
-    private bool isCollided;
-
-    void Update()
+    public class FailDetector : MonoBehaviour
     {
-        if (!_Character)
-            return;
+        [SerializeField] private SceneData _FailScene;
+        [SerializeField] private CharacterControllerProvider _CharacterProvider;
 
-        var hits = new Collider2D[6];
-        int count = _Character.GetComponent<Collider2D>().OverlapCollider(_CollisionFilter, hits);
-        if (count > 0 && !isCollided)
+        private bool isCollided;
+
+        protected void Update()
         {
-            isCollided = true;
-            _Loader.Instance.LoadLevel(_Loader.FailScene);
+            if (!_CharacterProvider.Controller)
+                return;
+
+            var hitBox = _CharacterProvider.Controller.Model.Hitable;
+            if (hitBox.IsCollideWithDanger() && !isCollided)
+            {
+                isCollided = true;
+                _FailScene.Load();
+            }
         }
     }
 }
+
