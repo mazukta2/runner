@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Game;
+using Assets.Scripts.Game.Scenes;
 
 namespace Game
 {
     public class FailDetector : MonoBehaviour
     {
-        [SerializeField] private SceneData _FailScene;
+        [SerializeField] private SceneInfo _FailScene;
         [SerializeField] private CharacterControllerProvider _CharacterProvider;
 
         private bool isCollided;
@@ -20,7 +20,7 @@ namespace Game
             if (hitBox.IsCollideWithDanger() && !isCollided)
             {
                 isCollided = true;
-                _FailScene.Load();
+                //_FailScene.Load();
             }
         }
     }

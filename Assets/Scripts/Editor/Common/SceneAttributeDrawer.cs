@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Assets.Scripts.Game.Scenes;
+using UnityEditor;
 using UnityEngine;
 
 namespace Game.Editor

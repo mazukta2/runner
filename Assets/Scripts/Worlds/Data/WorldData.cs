@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
+using Assets.Scripts.Game.Scenes;
 
 namespace Game
 {
@@ -9,12 +10,12 @@ namespace Game
     public class WorldData : ScriptableObject
     {
         public MenuWorld MenuPrefab => _MenuViewPrefab;
-        public SceneData Scene => _Scene;
+        public SceneInfo Scene => _Scene;
         public GameObject[] Obstacles => _Obstacles;
         public PhysicSettingsData Physics => _Physics;
 
         [SerializeField] MenuWorld _MenuViewPrefab;
-        [SerializeField] SceneData _Scene;
+        [SerializeField] SceneInfo _Scene;
         [SerializeField] GameObject[] _Obstacles;
         [SerializeField] PhysicSettingsData _Physics;
     }

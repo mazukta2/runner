@@ -3,13 +3,14 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 using UnityEngine.Events;
+using Assets.Scripts.Game.Scenes;
 
 namespace Game
 {
     [RequireComponent(typeof(Button))]
     public class ToMainMenuButton : MonoBehaviour
     {
-        [SerializeField] public SceneData _MainMenu;
+        [SerializeField] public SceneInfo _MainMenu;
 
         private Button _button;
 
@@ -27,7 +28,7 @@ namespace Game
 
         private void ToMainMenu()
         {
-            _MainMenu.Load();
+            //_MainMenu.Load();
         }
     }
 
