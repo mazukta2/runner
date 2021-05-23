@@ -1,26 +1,20 @@
-﻿using Assets.Scripts.Characters.Settings;
-using Assets.Scripts.Physics.Services;
-using Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Assets.Scripts.Data.Characters;
 
-namespace Assets.Scripts.Characters.Services
+namespace Assets.Scripts.Models.Services.Characters
 {
+    // character model
     public class Character
     {
+        // character settings
         public CharacterData Data { get; private set; }
-        public CharacterPhysic Body { get; private set; }
-        public CharacterHitable Hitable { get; private set; }
+        // physycal body in world space
+        public CharacterBody Body { get; private set; }
 
         public Character(CharacterData characterData,
-            CharacterPhysic physic)
+            CharacterBody body)
         {
             Data = characterData;
-            Body = physic;
-            Hitable = new CharacterHitable(characterData, physic);
+            Body = body;
         }
     }
 }

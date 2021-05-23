@@ -1,16 +1,11 @@
-﻿using Assets.Scripts.Characters.Services;
-using Assets.Scripts.Characters.Settings;
-using Assets.Scripts.Game.Loader;
+﻿using Assets.Scripts.Data.Characters;
+using Assets.Scripts.Data.World;
 using Assets.Scripts.Game.Services;
-using Assets.Scripts.Game.Updater;
-using Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Assets.Scripts.Models.Services.Characters;
+using Assets.Scripts.Models.Services.Scenes;
+using Assets.Scripts.Models.Services.Updater;
 
-namespace Assets.Scripts.Session.PreSession
+namespace Assets.Scripts.Models.Services.Sessions
 {
     public class SessionService : IService
     {
@@ -19,11 +14,11 @@ namespace Assets.Scripts.Session.PreSession
         public WorldData WorldData { get; private set; }
 
         private GameLoadingService _loading;
-        public SessionService(PreSessionService preSessionService, GameLoadingService gameLoading, UpdaterService updater)
+        public SessionService(PreSessionService preSessionService, CharactersSettingsData settings, GameLoadingService gameLoading, UpdaterService updater)
         {
             WorldData = preSessionService.SelectedWorldData;
-            MainCharacter = new Character(preSessionService.SelectedCharacterData, 
-                new Physics.Services.CharacterPhysic(WorldData.Physics, updater));
+            MainCharacter = new Character(preSessionService.SelectedCharacterData,
+                new CharacterBody(WorldData.Physics, settings, updater));
 
             _loading = gameLoading;
         }

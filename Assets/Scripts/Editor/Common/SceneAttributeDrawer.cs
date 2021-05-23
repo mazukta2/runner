@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Game.Scenes;
+﻿using Assets.Scripts.Data.Scenes;
 using UnityEditor;
 using UnityEngine;
 

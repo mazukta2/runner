@@ -1,11 +1,12 @@
-﻿using Assets.Scripts.Characters.Services;
-using Assets.Scripts.Common.Providers;
+﻿using Assets.Scripts.Components.Providers.Common;
+using Assets.Scripts.Models.Services.Characters;
 using System;
 using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Characters.Settings
 {
+    // character model
     public abstract class CharacterProvider : MonoBehaviour
     {
         public abstract Character GetCharacter();

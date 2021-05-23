@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
 
-namespace Assets.Scripts.Common.View
+namespace Assets.Scripts.Components.Common
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteColorInterpolation : MonoBehaviour

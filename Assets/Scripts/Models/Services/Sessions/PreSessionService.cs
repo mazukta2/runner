@@ -1,14 +1,9 @@
-﻿using Assets.Scripts.Characters.Settings;
-using Assets.Scripts.Game.Loader;
+﻿using Assets.Scripts.Data.Characters;
+using Assets.Scripts.Data.World;
 using Assets.Scripts.Game.Services;
-using Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Assets.Scripts.Models.Services.Scenes;
 
-namespace Assets.Scripts.Session.PreSession
+namespace Assets.Scripts.Models.Services.Sessions
 {
     public class PreSessionService : IService
     {
@@ -34,7 +29,7 @@ namespace Assets.Scripts.Session.PreSession
 
         public void StartSession()
         {
-            _loading.LoadScene(SelectedWorldData.Scene, 
+            _loading.LoadScene(SelectedWorldData.Scene,
                 (services, scene) => scene.Init(services, this));
         }
     }

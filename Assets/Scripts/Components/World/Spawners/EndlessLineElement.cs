@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class EndlessLineElement : MonoBehaviour
+namespace Assets.Scripts.Components.World.Spawners
 {
-    public abstract void Replaced();
+    // basic element of endless line
+    public abstract class EndlessLineElement : MonoBehaviour
+    {
+        public abstract void Replaced();
+    }
 }

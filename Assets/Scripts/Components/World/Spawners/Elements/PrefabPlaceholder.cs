@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
 
-namespace Game
+namespace Assets.Scripts.Components.World.Spawners.Elements
 {
+    // this class spawns prefab on activation and respawn it
+    // if element was relocated.
     public class PrefabPlaceholder : EndlessLineElement
     {
-        [SerializeField] GameObject[] _Prefabs;
-        [SerializeField] bool _RespawnOnRelocation;
+        [SerializeField] GameObject[] _prefabs;
+        [SerializeField] bool _respawnOnRelocation;
 
         protected void Start()
         {
@@ -16,7 +16,7 @@ namespace Game
 
         public override void Replaced()
         {
-            if (!_RespawnOnRelocation)
+            if (!_respawnOnRelocation)
                 return;
 
             Spawn();
@@ -27,8 +27,8 @@ namespace Game
             for (int i = 0; i < transform.childCount; i++)
                 Destroy(transform.GetChild(i).gameObject);
 
-            var index = UnityEngine.Random.Range(0, _Prefabs.Length);
-            var obstacle = _Prefabs[index];
+            var index = UnityEngine.Random.Range(0, _prefabs.Length);
+            var obstacle = _prefabs[index];
             Instantiate(obstacle, transform);
         }
     }

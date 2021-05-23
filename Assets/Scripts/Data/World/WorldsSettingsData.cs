@@ -2,10 +2,10 @@
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
-using Assets.Scripts.Game.Data;
 
-namespace Game
+namespace Assets.Scripts.Data.World
 {
+    // all worlds settings
     [CreateAssetMenu(menuName = "Game/Worlds/Settings")]
     public class WorldsSettingsData : DataService
     {

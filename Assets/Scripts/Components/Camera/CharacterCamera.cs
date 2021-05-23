@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using Assets.Scripts.Characters.Settings;
 
-namespace Assets.Scripts.Camera.Components
+namespace Assets.Scripts.Components.Camera
 {
-    // Camera following a character
+    // Camera follow a character
     public class CharacterCamera : MonoBehaviour
     {
         [SerializeField] private CharacterProvider.Field _characterProvider;

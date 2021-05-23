@@ -1,25 +1,23 @@
-﻿using Assets.Scripts.Characters.Components.Views;
-using Game;
+﻿using Assets.Scripts.Data.Characters.MovementRules;
 using UnityEngine;
 
-namespace Assets.Scripts.Characters.Settings
+namespace Assets.Scripts.Data.Characters
 {
-    // Describe combination of logic, settings and visual representations for
-    // a character. 
+    // Settings for character
     [CreateAssetMenu(menuName = "Game/Characters/Character")]
     public class CharacterData : ScriptableObject
     {
-        public GameObject View => _view.gameObject;
-        public GameObject Model => _model;
+        // simple view. uses only data to show.
+        public GameObject MainMenuView => _mainMenuView;
+        // view for level. uses model to show.
+        public GameObject LevelView => _levelView;
+        // Movement rules for character
         public MovementRuleData Movement => _movement;
-        public ContactFilter2D DangerHiting => _dangerHitter;
 
-        [SerializeField] GameObject _model;
-        [SerializeField] GameObject _view;
+        [SerializeField] GameObject _mainMenuView;
+        [SerializeField] GameObject _levelView;
 
         [SerializeField] MovementRuleData _movement;
-
-        [SerializeField] ContactFilter2D _dangerHitter;
     }
 
 }

@@ -1,12 +1,9 @@
-﻿using Assets.Scripts.Characters.Settings;
-using Assets.Scripts.Game.Providers;
-using Assets.Scripts.Session.PreSession;
-using System;
-using System.Collections;
-using UnityEngine;
+﻿using Assets.Scripts.Components.Providers.Common;
+using Assets.Scripts.Models.Services.Sessions;
 
-namespace Assets.Scripts.MainMenu.Providers
+namespace Assets.Scripts.Components.Providers.Sessions
 {
+    // prepering for session provider
     public class PreSessionProvider : SingleServiceMonoBehaviourProvider<PreSessionService>
     {
     }
