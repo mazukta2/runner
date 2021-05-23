@@ -28,14 +28,6 @@ namespace Assets.Scripts.Game.Loader
 
         private IEnumerator LoadingProcess<T>(T newScene, Action<ServicesSystem, T> preInit) where T : SceneInfo
         {
-            var curentScene = SceneManager.GetActiveScene();
-            var unloadingAsyncOperation = SceneManager.UnloadSceneAsync(curentScene);
-            if (unloadingAsyncOperation != null)
-            {
-                while (!unloadingAsyncOperation.isDone)
-                    yield return new WaitForEndOfFrame();
-            }
-
             newScene.PreInit(_core.Services);
             preInit(_core.Services, newScene);
 
