@@ -12,9 +12,12 @@ namespace Game
         public Vector2 Gravitation => _Gravitation;
         public Vector2 MaximumForce => _MaximumForce;
 
+        public ContactFilter2D GroundCollisions => _groudCollisions;
+
         [SerializeField] Vector2 _Friction;
         [SerializeField] Vector2 _Gravitation;
         [SerializeField] Vector2 _MaximumForce;
+        [SerializeField] ContactFilter2D _groudCollisions;
         
     }
 

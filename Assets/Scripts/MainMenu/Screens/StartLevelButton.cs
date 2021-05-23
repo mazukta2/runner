@@ -2,22 +2,31 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using Assets.Scripts.MainMenu.Providers;
+using Assets.Scripts.Session.PreSession;
 
 namespace Game
 {
     public class StartLevelButton : MonoBehaviour
     {
-        //[SerializeField] private SessionProvider _SessionProvider;
-        [SerializeField] private Button _Button;
+        [SerializeField] private PreSessionProvider _preSessionProvider;
+        [SerializeField] private Button _button;
+        private PreSessionService _preSession;
 
-        void Start()
+        protected void Awake()
         {
-            _Button.onClick.AddListener(OnClick);
+            _button.onClick.AddListener(OnClick);
+            _preSession = _preSessionProvider.Get();
+        }
+
+        protected void OnDestroy()
+        {
+            _button.onClick.RemoveListener(OnClick);
         }
 
         private void OnClick()
         {
-            //_SessionProvider.Instance.World.Scene.Load();
+            _preSession.StartSession();
         }
     }
 

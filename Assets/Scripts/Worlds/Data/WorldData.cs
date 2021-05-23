@@ -3,21 +3,24 @@ using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
 using Assets.Scripts.Game.Scenes;
+using Assets.Scripts.Game.Scenes.Types;
 
 namespace Game
 {
     [CreateAssetMenu(menuName = "Game/Worlds/World")]
     public class WorldData : ScriptableObject
     {
-        public MenuWorld MenuPrefab => _MenuViewPrefab;
-        public SceneInfo Scene => _Scene;
-        public GameObject[] Obstacles => _Obstacles;
-        public PhysicSettingsData Physics => _Physics;
+        public GameObject MainMenuPrefab => _menuViewPrefab;
+        public LevelSceneData Scene => _scene;
+        public FailSceneData FailScene => _failScene;
+        public GameObject[] Obstacles => _obstacles;
+        public PhysicSettingsData Physics => _physics;
 
-        [SerializeField] MenuWorld _MenuViewPrefab;
-        [SerializeField] SceneInfo _Scene;
-        [SerializeField] GameObject[] _Obstacles;
-        [SerializeField] PhysicSettingsData _Physics;
+        [SerializeField] GameObject _menuViewPrefab;
+        [SerializeField] LevelSceneData _scene;
+        [SerializeField] FailSceneData _failScene;
+        [SerializeField] GameObject[] _obstacles;
+        [SerializeField] PhysicSettingsData _physics;
     }
 
 }

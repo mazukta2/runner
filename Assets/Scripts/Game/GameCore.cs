@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Game.Loader;
 using Assets.Scripts.Game.Scenes;
 using Assets.Scripts.Game.Services;
+using Assets.Scripts.Game.Updater;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,18 +16,28 @@ namespace Assets.Scripts.Game
 
         [SerializeField] SceneInfo _firstScene;
 
-        GameLoading _gameLoading;
         ServicesSystem _services;
 
         public void Awake()
         {
             DontDestroyOnLoad(gameObject);
-
-            _services = new ServicesSystem(this);
-            _gameLoading = new GameLoading(this);
-
-            _gameLoading.LoadScene(_firstScene);
+            Init();
         }
 
+        public void Restart()
+        {
+            Init();
+        }
+
+        private void Init()
+        {
+            _services = new ServicesSystem(this);
+            _services.Add(new GameService(this));
+            var loading = new GameLoadingService(this);
+            _services.Add(loading);
+            _services.Add(new UpdaterService(this));
+
+            loading.LoadScene(_firstScene, (sr, sc) => { });
+        }
     }
 }

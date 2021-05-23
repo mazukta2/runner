@@ -9,9 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2259191760486d46940996260d40f16, type: 3}
+  m_Script: {fileID: 11500000, guid: bb6f78afd5fed0b45b14e846016cb74e, type: 3}
   m_Name: Circle
   m_EditorClassIdentifier: 
-  _Controller: {fileID: 6165872863672228352, guid: 59e87b435b81d1c428ddc11bc164cfa4,
-    type: 3}
-  _Model: {fileID: 4996409038941732939, guid: f92675fac078dcd4f8f443fb04d69791, type: 3}
+  _model: {fileID: 7721285671700255917, guid: f92675fac078dcd4f8f443fb04d69791, type: 3}
+  _view: {fileID: 7734759294192106659, guid: 843efdc13f63d1e448aeb6289b08c5cb, type: 3}
+  _movement: {fileID: 11400000, guid: d0e9b300789376342917468c4e2273ad, type: 2}
+  _dangerHitter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0

@@ -11,74 +11,33 @@ using Assets.Scripts.Session.PreSession;
 
 namespace Game
 {
+    [RequireComponent(typeof(MainMenuListSelector))]
     public class CharacterSelector : MonoBehaviour
     {
-        [SerializeField] private Button _previousButton;
-        [SerializeField] private Button _nextButton;
-        [SerializeField] private GameObject _placeholder;
-
         [SerializeField] private PreSessionProvider _preSessionProvider;
         [SerializeField] private CharacterDataListProvider _charactersProviders;
 
+        private MainMenuListSelector _selector;
         private PreSessionService _preSession;
         private CharacterData[] _elements;
-        private int _currentIndex;
-        private GameObject _currentElement;
 
         protected void Awake()
         {
             _preSession = _preSessionProvider.Get();
             _elements = _charactersProviders.Get();
 
-            _previousButton.onClick.AddListener(OnPrevClick);
-            _nextButton.onClick.AddListener(OnNextClick);
-        }
-
-        protected void Start()
-        {
-            UpdateView();
-        }
-
-        protected void OnDestroy()
-        {
-            _previousButton.onClick.RemoveListener(OnPrevClick);
-            _nextButton.onClick.RemoveListener(OnNextClick);
-        }
-
-        private void OnPrevClick()
-        {
-            _currentIndex--;
-            if (_currentIndex < 0)
-                _currentIndex = _elements.Length - 1;
-
-            UpdatePreSession();
-            UpdateView();
-        }
-
-        private void OnNextClick()
-        {
-            _currentIndex++;
-            if (_currentIndex > _elements.Length - 1)
-                _currentIndex = 0;
-
-            UpdatePreSession();
-            UpdateView();
+            _selector = GetComponent<MainMenuListSelector>();
+            _selector.Init(0, _elements.Length, UpdatePreSession, GetModel);
         }
 
         private void UpdatePreSession()
         {
-            _preSession.SetCharacter(_elements[_currentIndex]);
+            _preSession.SetCharacter(_elements[_selector.Index]);
         }
 
-        private void UpdateView()
+        private GameObject GetModel(int index)
         {
-            if (_currentElement != null)
-                Destroy(_currentElement);
-
-            var currentCharacterData = _elements[_currentIndex];
-
-            var go = Instantiate(currentCharacterData.Model, _placeholder.transform);
-            _currentElement = go;
+            return _elements[index].Model;
         }
 
     }

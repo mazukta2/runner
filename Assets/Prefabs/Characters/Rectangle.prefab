@@ -103,6 +103,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -114,6 +115,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -173,8 +175,6 @@ GameObject:
   - component: {fileID: 510269279}
   - component: {fileID: 315851517843012274}
   - component: {fileID: -4158822614668158660}
-  - component: {fileID: -8205144941462026544}
-  - component: {fileID: 6050512113982029529}
   - component: {fileID: 6807276292976081986}
   m_Layer: 5
   m_Name: Rectangle
@@ -249,7 +249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5e3fd4cd7485d408c688b087d43fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Physics: {fileID: -8205144941462026544}
   _Hitable: {fileID: 6807276292976081986}
 --- !u!50 &-4158822614668158660
 Rigidbody2D:
@@ -272,49 +271,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-8205144941462026544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721285671700255917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407143f7b18ef8d4290a316e6572a2bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Settings: {fileID: 0}
-  _CollisionFilter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 512
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
---- !u!114 &6050512113982029529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7721285671700255917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a947bf4d349f01f4bb930ad4d6b9052c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _Physics: {fileID: -8205144941462026544}
-  _Animator: {fileID: 5627429497431049678}
-  _GroundedKey: IsGrounded
-  _RunningKey: Running
 --- !u!114 &6807276292976081986
 MonoBehaviour:
   m_ObjectHideFlags: 0

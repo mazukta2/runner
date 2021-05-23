@@ -1,21 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.Scripts.Characters.Settings;
+using Assets.Scripts.Characters.Services;
 
 namespace Game
 {
     public class CharacterSpeed : MonoBehaviour
     {
-        [SerializeField] private Text _Text;
-        [SerializeField] private CharacterControllerProvider _Provider;
+        [SerializeField] private Text _text;
+        [SerializeField] private CharacterProvider _characterProvider;
+        private Character _character;
+
+        protected void Awake()
+        {
+            _character = _characterProvider.Get();
+        }
 
         private void Update()
         {
-            if (!_Provider.Controller)
-                return;
-
-            _Text.text = string.Format("Speed: {0:0.0} ", 
-                _Provider.Controller.Model.Physics.Force.x);
+            _text.text = string.Format("Speed: {0:0.0} ",
+                _character.Physic.Force.x);
         }
     }
 }

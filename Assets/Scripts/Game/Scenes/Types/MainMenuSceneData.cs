@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Game.Data;
+using Assets.Scripts.Game.Loader;
 using Assets.Scripts.Game.Services;
 using Assets.Scripts.Session.PreSession;
 using System;
@@ -17,7 +18,7 @@ namespace Assets.Scripts.Game.Scenes.Types
             foreach (var item in _dataServices)
                 servicesSystem.Add(item);
 
-            servicesSystem.Add(new PreSessionService());
+            servicesSystem.Add(new PreSessionService(servicesSystem.Get<GameLoadingService>()));
         }
     }
 }
