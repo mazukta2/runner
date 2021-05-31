@@ -1,15 +1,14 @@
 ﻿using Assets.Scripts.Game.Services;
-using Assets.Scripts.Models.Services.Updater;
 
-namespace Assets.Scripts.Models.Services.Sessions.Fail
+namespace Assets.Scripts.Models.Services
 {
-    public class FailDetector : IService
+    public class FailDetectorService : IService
     {
-        private bool isCollided;
         private SessionService _session;
         private UpdaterService _updater;
+        private bool _isCollided;
 
-        public FailDetector(SessionService session, UpdaterService updater)
+        public FailDetectorService(SessionService session, UpdaterService updater)
         {
             _session = session;
             _updater = updater;
@@ -20,9 +19,9 @@ namespace Assets.Scripts.Models.Services.Sessions.Fail
         protected void Update()
         {
             if (_session.MainCharacter.Body.IsCollidingWithDanger() 
-                && !isCollided)
+                && !_isCollided)
             {
-                isCollided = true;
+                _isCollided = true;
                 _session.FailSession();
             }
         }

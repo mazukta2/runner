@@ -1,9 +1,8 @@
 ﻿using Assets.Scripts.Data.Characters;
 using Assets.Scripts.Data.World;
 using Assets.Scripts.Game.Services;
-using Assets.Scripts.Models.Services.Scenes;
 
-namespace Assets.Scripts.Models.Services.Sessions
+namespace Assets.Scripts.Models.Services
 {
     public class PreSessionService : IService
     {

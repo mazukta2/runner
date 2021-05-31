@@ -6,7 +6,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Models.Services.Scenes
+namespace Assets.Scripts.Models.Services
 {
     public class GameLoadingService : IService
     {

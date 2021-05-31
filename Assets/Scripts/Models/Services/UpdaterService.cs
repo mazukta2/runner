@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Models.Services.Updater
+namespace Assets.Scripts.Models.Services
 {
     public class UpdaterService : IService
     {

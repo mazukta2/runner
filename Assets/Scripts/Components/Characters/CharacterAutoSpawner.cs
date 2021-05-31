@@ -3,6 +3,7 @@ using Assets.Scripts.Characters.Settings;
 using Assets.Scripts.Components.Providers.Characters;
 using static Assets.Scripts.Characters.Settings.PrefabCharacterProvider;
 using Assets.Scripts.Models.Services.Characters;
+using Assets.Scripts.Models.Entities;
 
 namespace Assets.Scripts.Components.Characters
 {

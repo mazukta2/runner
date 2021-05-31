@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Data.Characters;
+using Assets.Scripts.Models.Services.Characters;
 
-namespace Assets.Scripts.Models.Services.Characters
+namespace Assets.Scripts.Models.Entities
 {
     // character model
     public class Character

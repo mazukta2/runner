@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Components.Providers.Characters;
+using Assets.Scripts.Models.Entities;
 using Assets.Scripts.Models.Services.Characters;
 
 namespace Assets.Scripts.Characters.Settings

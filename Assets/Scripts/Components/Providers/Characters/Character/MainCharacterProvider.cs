@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Components.Providers.Common.Services;
+using Assets.Scripts.Models.Entities;
 using Assets.Scripts.Models.Services.Characters;
 using Assets.Scripts.Models.Services.Sessions;
 using System.Collections;
