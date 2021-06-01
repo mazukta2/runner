@@ -12,16 +12,14 @@ namespace Assets.Scripts.Data.Characters.MovementRules.List
 
         public override void Move(Character character, bool jump)
         {
-            var physic = character;
-
-            var speed = physic.Force.x;
+            var speed = character.Force.x;
             speed += _acceleration * Time.deltaTime;
             speed = Mathf.Min(speed, _maxSpeed);
-            physic.Force = new Vector2(speed, physic.Force.y);
+            character.Force = new Vector2(speed, character.Force.y);
 
-            if (physic.IsGrounded && jump)
+            if (character.IsGrounded && jump)
             {
-                physic.Force += new Vector2(0,
+                character.Force += new Vector2(0,
                     Mathf.Sqrt(2 * _jumpHeight));
             }
         }

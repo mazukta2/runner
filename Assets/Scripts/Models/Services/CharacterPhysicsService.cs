@@ -46,37 +46,21 @@ namespace Assets.Scripts.Models.Services
                 var character = item.Key;
                 var collider = item.Value.Collider;
 
-                //Gravitation.Adding G per second.
                 character.Force += _physicSettingsData.Gravitation * Time.deltaTime;
-                character.Position += character.Force * Time.deltaTime;
 
-                // Collision calcultations
-                character.IsGrounded = false;
-                var hits = new Collider2D[6];
-                int count = collider.OverlapCollider(_physicSettingsData.GroundCollisions, hits);
-                for (int i = 0; i < count; i++)
+                var hits = new RaycastHit2D[1];
+                character.IsGrounded = collider.Raycast(Vector2.down,
+                    _physicSettingsData.GroundCollisions, hits, character.Force.y) > 0;
+
+                if (character.IsGrounded && character.Force.y < 0)
                 {
-                    var hit = hits[i];
-                    var colliderDistance = hit.Distance(collider);
-
-                    if (colliderDistance.isOverlapped)
-                    {
-                        // Pushing backward
-                        character.Position += colliderDistance.pointA - colliderDistance.pointB;
-
-                        // Grounded if collider beneath
-                        if (Vector2.Angle(colliderDistance.normal, Vector2.up) < 90 && character.Force.y < 0)
-                        {
-                            character.IsGrounded = true;
-
-                            if (character.Force.y < 0) // Blocking falling
-                                character.Force = new Vector2(character.Force.x, 0);
-                        }
-                    }
+                    character.Force = new Vector2(character.Force.x, 0);
+                    character.Position = new Vector2(character.Position.x, hits[0].point.y);
                 }
+
+                character.Position += character.Force * Time.deltaTime;
                 collider.transform.position = character.Position;
             }
         }
-
     }
 }

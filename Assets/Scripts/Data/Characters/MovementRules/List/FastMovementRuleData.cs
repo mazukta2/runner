@@ -13,8 +13,7 @@ namespace Assets.Scripts.Data.Characters.MovementRules.List
 
         public override void Move(Character character, bool jump)
         {
-            var physic = character;
-            var speed = physic.Force.x;
+            var speed = character.Force.x;
             if (speed < _maxSpeed / 2)
                 speed += _acceleration * Time.deltaTime;
             else
@@ -22,10 +21,10 @@ namespace Assets.Scripts.Data.Characters.MovementRules.List
                     Mathf.Pow(speed, 2), Time.deltaTime);
 
             speed = Mathf.Min(speed, _maxSpeed);
-            physic.Force = new Vector2(speed, physic.Force.y);
-            if (physic.IsGrounded && jump)
+            character.Force = new Vector2(speed, character.Force.y);
+            if (character.IsGrounded && jump)
             {
-                physic.Force += new Vector2(0,
+                character.Force += new Vector2(0,
                     Mathf.Sqrt(2 * _jumpHeight));
             }
         }
