@@ -30,15 +30,21 @@ CharacterProvider can use character from current session or from prefab spawner.
 Its just game definitions in ScriptableObjects. Nothing special.
 
 == Models ==
-Its a game logic and game entities. Its a little bit mixed right now. 
+Its a game logic and game entities. Its a little bit mixed right now.
 
 Services is a global objects that control flow of the game. They more like systems in
 ECS model. Components can get access to services through providers. 
 
+All services created before scene loading so they all available on Awake. The list of
+services is clearing on scene unloading, but monobehaviour keep references, so they
+can always do final steps while unloading (unsubscribe on destroy for example).
+
 Entities - its just state of the game. This layer dont use Unity logic and 
-can be easily transferred to server or saved.
+can be easily transferred to server or saved. 
+
 
 == TODO ==
 * More work with models should be done. 
 * Obsticales is not part of models.
 * More clear seperation of entities and services.
+* Move entities from services to separate class, so they can be easily saved and kept between sessions.
