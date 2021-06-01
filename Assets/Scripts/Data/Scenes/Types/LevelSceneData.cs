@@ -17,9 +17,15 @@ namespace Assets.Scripts.Game.Scenes.Types
             foreach (var item in _dataServices)
                 servicesSystem.Add(item);
 
-            servicesSystem.Add(new SessionService(preSessionService,
+            var updater = servicesSystem.Get<UpdaterService>();
+            var session = new SessionService(preSessionService,
                 servicesSystem.Get<CharactersSettingsData>(),
-                servicesSystem.Get<GameLoadingService>()));
+                servicesSystem.Get<GameLoadingService>());
+
+            servicesSystem.Add(session);
+            servicesSystem.Add(new CharacterPhysicsService(preSessionService.SelectedWorldData.Physics, updater));
+            servicesSystem.Add(new CharacterControlsService(session.MainCharacter, updater));
+            servicesSystem.Add(new FailDetectorService(session, updater));
         }
     }
 }

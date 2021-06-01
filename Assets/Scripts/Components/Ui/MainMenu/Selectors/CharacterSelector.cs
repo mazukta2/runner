@@ -10,7 +10,6 @@ namespace Assets.Scripts.Components.Ui.MainMenu.Selectors
     {
         [SerializeField] private PreSessionProvider.Field _preSessionProvider;
         [SerializeField] private CharacterDataListProvider.Field _charactersProvider;
-        [SerializeField] private PreSessionProvider.Field2 _preSessionProvider2;
 
         private MainMenuListSelector _selector;
 

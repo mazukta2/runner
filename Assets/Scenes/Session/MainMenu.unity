@@ -291,6 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 169224377}
+  _preSessionProvider:
+    _provider: {fileID: 483732899}
 --- !u!1 &233754668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da48de1fe6b9ba409982dcd6f260da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _preSessionProvider:
+    _provider: {fileID: 483732899}
   _charactersProvider:
     _provider: {fileID: 2135959971}
 --- !u!225 &1342984542
@@ -1760,6 +1764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddd0f0d121dfa74fa2c2a0d368a1624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _preSessionProvider:
+    _provider: {fileID: 483732899}
   _worldsListProviders:
     _provider: {fileID: 1645078690}
 --- !u!114 &1883022383

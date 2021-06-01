@@ -13,7 +13,7 @@ namespace Assets.Scripts.Components.Characters
 
         [SerializeField] Collider2D _collider;
         [SerializeField] CharacterProvider.Field _characterProvider;
-        [SerializeField] CharacterPhysicsProvider.Field _characterBodyProvider;
+        [SerializeField] CharactersPhysicsProvider.Field _characterBodyProvider;
 
         private Character _character;
         private CharacterPhysicsService _bodyService;

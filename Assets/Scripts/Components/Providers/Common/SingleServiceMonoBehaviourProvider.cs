@@ -7,20 +7,14 @@ using UnityEngine;
 namespace Assets.Scripts.Components.Providers.Common
 {
     // get any service
-    public abstract class SingleServiceMonoBehaviourProvider<T> : MonoBehaviour where T : IService
+    public abstract class SingleServiceMonoBehaviourProvider<TService> : MonoBehaviour 
+        where TService : IService
     {
         private ServiceSystemKeeper _serviceProvider = new ServiceSystemKeeper();
 
-        public T Get()
+        public TService Get()
         {
-            return _serviceProvider.GetServices().Get<T>();
-        }
-
-        [Serializable]
-        public class Field : ProviderField<SingleServiceMonoBehaviourProvider<T>, T>
-        {
-            protected override T GetService(SingleServiceMonoBehaviourProvider<T> provider)
-                => provider.Get();
+            return _serviceProvider.GetServices().Get<TService>();
         }
     }
 }

@@ -4,14 +4,15 @@ using UnityEngine.UI;
 using System;
 using Assets.Scripts.Components.Characters;
 using Assets.Scripts.Characters.Settings;
+using Assets.Scripts.Characters;
 
 namespace Assets.Scripts.Components.Ui.Level
 {
     // Jump input for character.
     public class CharacterJumpButton : MonoBehaviour
     {
-        [SerializeField] private Button _button;
-        [SerializeField] CharacterProvider.Field _characterProvider;
+        [SerializeField] Button _button;
+        [SerializeField] CharacterControlsProvider.Field _characterControlsProvider;
 
         private void Start()
         {
@@ -25,10 +26,7 @@ namespace Assets.Scripts.Components.Ui.Level
 
         private void OnClick()
         {
-            // TODO: In more complex game you should make another class
-            // to accumulate all input from UI/Keyboard/Gamepad/etc and
-            // manage it.
-            //_characterProvider.Get().World.Jump();
+            _characterControlsProvider.Get().Jump();
         }
     }
 }
