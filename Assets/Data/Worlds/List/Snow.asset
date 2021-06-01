@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934a7bdf2d59d1f4893162e367dc6fac, type: 3}
   m_Name: Snow
   m_EditorClassIdentifier: 
-  _menuViewPrefab: {fileID: 5950257629973481076, guid: 0adfb4873f3aa0c4590a073b25addd56,
+  _menuViewView: {fileID: 5950257629973481076, guid: 7e9a440053a29214a91a92e2db5ae665,
     type: 3}
   _scene: {fileID: 11400000, guid: 5da89073952cb6742aae5087b2bd8a87, type: 2}
   _failScene: {fileID: 11400000, guid: d050b62eb8e1797429e76b1d175387d1, type: 2}
-  _obstacles: []
   _physics: {fileID: 11400000, guid: 631e841ec6087f744aaf5a7ede178e79, type: 2}

@@ -2,9 +2,7 @@
 using Assets.Scripts.Data;
 using Assets.Scripts.Data.Characters;
 using Assets.Scripts.Data.Scenes;
-using Assets.Scripts.Models.Services.Scenes;
-using Assets.Scripts.Models.Services.Sessions;
-using Assets.Scripts.Models.Services.Updater;
+using Assets.Scripts.Models.Services;
 using UnityEngine;
 
 namespace Assets.Scripts.Game.Scenes.Types
@@ -21,8 +19,7 @@ namespace Assets.Scripts.Game.Scenes.Types
 
             servicesSystem.Add(new SessionService(preSessionService,
                 servicesSystem.Get<CharactersSettingsData>(),
-                servicesSystem.Get<GameLoadingService>(),
-                servicesSystem.Get<UpdaterService>()));
+                servicesSystem.Get<GameLoadingService>()));
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using Assets.Scripts.Characters.Settings;
 using Assets.Scripts.Components.Providers.Common;
-using Assets.Scripts.Models.Services.Sessions;
-using System;
-using System.Collections;
-using UnityEngine;
+using Assets.Scripts.Models.Services;
 
 namespace Assets.Scripts.Components.Providers.Sessions
 {

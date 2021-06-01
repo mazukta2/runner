@@ -11,12 +11,9 @@ namespace Assets.Scripts.Data.Characters
 
         // what is dangerous for characters
         public ContactFilter2D DangerCollision => _dangerCollision;
-        // physic size
-        public Vector2 Size => _size;
 
         [SerializeField] CharacterData[] _characters;
         [SerializeField] ContactFilter2D _dangerCollision;
-        [SerializeField] Vector2 _size;
     }
 
 }

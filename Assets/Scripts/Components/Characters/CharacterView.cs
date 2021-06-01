@@ -16,9 +16,9 @@ namespace Assets.Scripts.Components.Characters
         protected void Update()
         {
             var character = _characterProvider.Get();
-            transform.position = character.Body.Position;
-            _animator.SetBool(_runningKey, Mathf.Abs(character.Body.Force.x) > 0);
-            _animator.SetBool(_groundedKey, character.Body.IsGrounded);
+            transform.position = character.Position;
+            _animator.SetBool(_runningKey, Mathf.Abs(character.Force.x) > 0);
+            _animator.SetBool(_groundedKey, character.IsGrounded);
         }
     }
 }

@@ -12,20 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6f78afd5fed0b45b14e846016cb74e, type: 3}
   m_Name: Triangle
   m_EditorClassIdentifier: 
-  _model: {fileID: 7721285671700255917, guid: cbb66aa8931399a40ba3f6b5da2990a3, type: 3}
-  _view: {fileID: 7734759294192106659, guid: 843efdc13f63d1e448aeb6289b08c5cb, type: 3}
+  _mainMenuView: {fileID: 7721285671700255917, guid: cbb66aa8931399a40ba3f6b5da2990a3,
+    type: 3}
+  _levelView: {fileID: 4300990731296511822, guid: 08297171a45c4af4bac27c0e9b9f9fbd,
+    type: 3}
   _movement: {fileID: 11400000, guid: 33016e5cac85a854795ab0af3fec111e, type: 2}
-  _dangerHitter:
-    useTriggers: 0
-    useLayerMask: 1
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 256
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0

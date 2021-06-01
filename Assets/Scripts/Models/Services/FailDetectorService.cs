@@ -18,12 +18,12 @@ namespace Assets.Scripts.Models.Services
 
         protected void Update()
         {
-            if (_session.MainCharacter.Body.IsCollidingWithDanger() 
-                && !_isCollided)
-            {
-                _isCollided = true;
-                _session.FailSession();
-            }
+            //if (_session.MainCharacter.Body.IsCollidingWithDanger() 
+            //    && !_isCollided)
+            //{
+            //    _isCollided = true;
+            //    _session.FailSession();
+            //}
         }
     }
 }

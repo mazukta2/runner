@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Models.Services.Game;
+﻿using Assets.Scripts.Models.Services;
 
 namespace Assets.Scripts.Components.Providers.Common
 {

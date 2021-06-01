@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.Components.Providers.Common.Services;
 using Assets.Scripts.Data.World;
-using Assets.Scripts.Models.Services.Sessions;
+using Assets.Scripts.Models.Services;
 using System.Collections;
 using UnityEngine;
 

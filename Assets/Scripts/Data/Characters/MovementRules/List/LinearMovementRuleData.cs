@@ -1,8 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
-using UnityEngine.SceneManagement;
-using Assets.Scripts.Models.Services.Characters;
 using Assets.Scripts.Models.Entities;
 
 namespace Assets.Scripts.Data.Characters.MovementRules.List
@@ -16,7 +12,7 @@ namespace Assets.Scripts.Data.Characters.MovementRules.List
 
         public override void Move(Character character, bool jump)
         {
-            var physic = character.Body;
+            var physic = character;
 
             var speed = physic.Force.x;
             speed += _acceleration * Time.deltaTime;

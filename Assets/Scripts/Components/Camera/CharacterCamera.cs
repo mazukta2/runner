@@ -10,7 +10,7 @@ namespace Assets.Scripts.Components.Camera
 
         protected void LateUpdate()
         {
-            transform.position = new Vector3(_characterProvider.Get().Body.Position.x,
+            transform.position = new Vector3(_characterProvider.Get().Position.x,
                 transform.position.y);
         }
     }

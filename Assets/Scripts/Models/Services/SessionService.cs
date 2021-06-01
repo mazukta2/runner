@@ -11,11 +11,11 @@ namespace Assets.Scripts.Models.Services
         public WorldData WorldData { get; private set; }
 
         private GameLoadingService _loading;
-        public SessionService(PreSessionService preSessionService, CharactersSettingsData settings, GameLoadingService gameLoading, UpdaterService updater)
+        public SessionService(PreSessionService preSessionService, 
+            CharactersSettingsData settings, GameLoadingService gameLoading)
         {
             WorldData = preSessionService.SelectedWorldData;
-            MainCharacter = new Character(preSessionService.SelectedCharacterData,
-                new CharacterBody(WorldData.Physics, settings, updater));
+            MainCharacter = new Character(preSessionService.SelectedCharacterData);
 
             _loading = gameLoading;
         }

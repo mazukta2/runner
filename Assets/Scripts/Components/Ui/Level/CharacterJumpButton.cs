@@ -28,7 +28,7 @@ namespace Assets.Scripts.Components.Ui.Level
             // TODO: In more complex game you should make another class
             // to accumulate all input from UI/Keyboard/Gamepad/etc and
             // manage it.
-            _characterProvider.Get().Body.Jump();
+            //_characterProvider.Get().World.Jump();
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.Data.Scenes;
-using Assets.Scripts.Models.Services.Game;
-using Assets.Scripts.Models.Services.Scenes;
-using Assets.Scripts.Models.Services.Updater;
+using Assets.Scripts.Game.Scenes.Types;
+using Assets.Scripts.Models.Services;
 using UnityEngine;
 
 namespace Assets.Scripts.Components.Core
@@ -11,7 +10,7 @@ namespace Assets.Scripts.Components.Core
     {
         public ServicesSystem Services => _services;
 
-        [SerializeField] SceneInfo _firstScene;
+        [SerializeField] MainMenuSceneData _firstScene;
 
         ServicesSystem _services;
 
@@ -35,7 +34,7 @@ namespace Assets.Scripts.Components.Core
             _services.Add(loading);
             _services.Add(new UpdaterService(this));
 
-            loading.LoadScene(_firstScene);
+            loading.LoadScene(_firstScene, (s, v) => v.Init(_services));
         }
     }
 }

@@ -1,21 +1,19 @@
 ﻿using Assets.Scripts.Data.Characters;
-using Assets.Scripts.Models.Services.Characters;
+using UnityEngine;
 
 namespace Assets.Scripts.Models.Entities
 {
     // character model
     public class Character
     {
-        // character settings
         public CharacterData Data { get; private set; }
-        // physycal body in world space
-        public CharacterBody Body { get; private set; }
+        public Vector2 Position { get; set; }
+        public Vector2 Force { get; set; }
+        public bool IsGrounded { get; set; }
 
-        public Character(CharacterData characterData,
-            CharacterBody body)
+        public Character(CharacterData characterData)
         {
             Data = characterData;
-            Body = body;
         }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
-using UnityEngine.SceneManagement;
-using Assets.Scripts.Models.Services.Characters;
 using Assets.Scripts.Models.Entities;
 
 namespace Assets.Scripts.Data.Characters.MovementRules

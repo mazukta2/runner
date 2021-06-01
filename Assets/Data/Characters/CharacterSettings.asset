@@ -16,3 +16,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 32e9e1b5c5aad394bba23604726006eb, type: 2}
   - {fileID: 11400000, guid: 93a70be410fd7a747aeb082b3fab95d6, type: 2}
   - {fileID: 11400000, guid: 6e7ce4f8d4159fe43bfaf85b8726977a, type: 2}
+  _dangerCollision:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 256
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0

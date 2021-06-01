@@ -13,7 +13,7 @@ namespace Assets.Scripts.Components.Ui.Level
         private void Update()
         {
             _text.text = string.Format("Speed: {0:0.0} ",
-                _characterProvider.Get().Body.Force.x);
+                _characterProvider.Get().Force.x);
         }
     }
 }
