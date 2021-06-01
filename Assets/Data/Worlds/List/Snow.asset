@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 3}
   _scene: {fileID: 11400000, guid: 5da89073952cb6742aae5087b2bd8a87, type: 2}
   _failScene: {fileID: 11400000, guid: d050b62eb8e1797429e76b1d175387d1, type: 2}
-  _physics: {fileID: 11400000, guid: 631e841ec6087f744aaf5a7ede178e79, type: 2}
+  _physics: {fileID: 11400000, guid: ab931b153c8cebd4c83d109cd84c9504, type: 2}

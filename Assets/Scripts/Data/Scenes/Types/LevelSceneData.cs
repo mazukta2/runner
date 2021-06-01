@@ -18,14 +18,16 @@ namespace Assets.Scripts.Game.Scenes.Types
                 servicesSystem.Add(item);
 
             var updater = servicesSystem.Get<UpdaterService>();
+            var charSettings = servicesSystem.Get<CharactersSettingsData>();
             var session = new SessionService(preSessionService,
-                servicesSystem.Get<CharactersSettingsData>(),
+                charSettings,
                 servicesSystem.Get<GameLoadingService>());
 
             servicesSystem.Add(session);
-            servicesSystem.Add(new CharacterPhysicsService(preSessionService.SelectedWorldData.Physics, updater));
+            var physics = new CharacterPhysicsService(preSessionService.SelectedWorldData.Physics, updater);
+            servicesSystem.Add(physics);
             servicesSystem.Add(new CharacterControlsService(session.MainCharacter, updater));
-            servicesSystem.Add(new FailDetectorService(session, updater));
+            servicesSystem.Add(new FailDetectorService(session, physics, charSettings, updater));
         }
     }
 }

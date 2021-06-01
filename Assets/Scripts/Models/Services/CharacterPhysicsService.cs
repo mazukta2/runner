@@ -39,6 +39,16 @@ namespace Assets.Scripts.Models.Services
             _characterBodies.Remove(character);
         }
 
+        public bool IsCollidedWith(Character character, ContactFilter2D filter)
+        {
+            if (!_characterBodies.ContainsKey(character))
+                return false;
+
+            var body = _characterBodies[character];
+            var hits = new Collider2D[1];
+            return body.Collider.OverlapCollider(filter, hits) > 0;
+        }
+
         protected void Update()
         {
             foreach (var item in _characterBodies)
