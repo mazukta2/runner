@@ -18,25 +18,21 @@ namespace Assets.Scripts.Models.Services
             _core = core;
         }
 
-        public void LoadScene<T>(T sceneData) where T : SceneInfo
-        {
-            LoadScene(sceneData, (st, sr) => { });
-        }
-
-        public void LoadScene<T>(T sceneData, Action<ServicesSystem, T> preInit) where T : SceneInfo
+        public void LoadScene<T>(T loader) where T : LoaderBase
         {
             if (_isLoading) throw new Exception("Loading is not completed yet");
-            if (sceneData == null) throw new ArgumentNullException("sceneData is null");
+            if (loader == null) throw new ArgumentNullException("sceneData is null");
 
             _isLoading = true;
-            _core.StartCoroutine(LoadingProcess(sceneData, preInit));
+            _core.StartCoroutine(LoadingProcess(loader));
         }
 
-        private IEnumerator LoadingProcess<T>(T newScene, Action<ServicesSystem, T> preInit) where T : SceneInfo
+        private IEnumerator LoadingProcess(LoaderBase loader)
         {
-            preInit(_core.Services, newScene);
+            _core.Services.Clear();
+            loader.Load(_core);
 
-            var loadingAsyncOperation = SceneManager.LoadSceneAsync(newScene.Path);
+            var loadingAsyncOperation = SceneManager.LoadSceneAsync(loader.Path);
             if (loadingAsyncOperation != null)
             {
                 while (!loadingAsyncOperation.isDone)

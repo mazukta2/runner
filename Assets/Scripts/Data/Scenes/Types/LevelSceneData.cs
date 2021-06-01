@@ -4,30 +4,46 @@ using Assets.Scripts.Data.Characters;
 using Assets.Scripts.Data.Scenes;
 using Assets.Scripts.Models.Services;
 using UnityEngine;
+using static Assets.Scripts.Game.Scenes.Types.LevelSceneData;
 
 namespace Assets.Scripts.Game.Scenes.Types
 {
     [CreateAssetMenu(menuName = "Game/Scenes/Level")]
-    public class LevelSceneData : SceneInfo
+    public class LevelSceneData : SceneInfo<Loader>
     {
         [SerializeField] DataService[] _dataServices;
 
-        public void Init(ServicesSystem servicesSystem, PreSessionService preSessionService)
+        public class Loader : LoaderBase
         {
-            foreach (var item in _dataServices)
-                servicesSystem.Add(item);
+            public override string Path => _scene.Path;
+            private LevelSceneData _scene;
+            private PreSessionService _preSessionService;
 
-            var updater = servicesSystem.Get<UpdaterService>();
-            var charSettings = servicesSystem.Get<CharactersSettingsData>();
-            var session = new SessionService(preSessionService,
-                charSettings,
-                servicesSystem.Get<GameLoadingService>());
+            public Loader(LevelSceneData sceneData, PreSessionService preSessionService)
+            {
+                _scene = sceneData;
+                _preSessionService = preSessionService;
+            }
 
-            servicesSystem.Add(session);
-            var physics = new CharacterPhysicsService(preSessionService.SelectedWorldData.Physics, updater);
-            servicesSystem.Add(physics);
-            servicesSystem.Add(new CharacterControlsService(session.MainCharacter, updater));
-            servicesSystem.Add(new FailDetectorService(session, physics, charSettings, updater));
+            public override void Load(GameCore core)
+            {
+                base.Load(core);
+
+                foreach (var item in _scene._dataServices)
+                    core.Services.Add(item);
+
+                var updater = core.Services.Get<UpdaterService>();
+                var charSettings = core.Services.Get<CharactersSettingsData>();
+                var session = new SessionService(_preSessionService,
+                    charSettings,
+                    core.Services.Get<GameLoadingService>());
+
+                core.Services.Add(session);
+                var physics = new CharacterPhysicsService(_preSessionService.SelectedWorldData.Physics, updater);
+                core.Services.Add(physics);
+                core.Services.Add(new CharacterControlsService(session.MainCharacter, updater));
+                core.Services.Add(new FailDetectorService(session, physics, charSettings, updater));
+            }
         }
     }
 }

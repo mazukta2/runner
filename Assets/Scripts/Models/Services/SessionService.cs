@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Data.Characters;
 using Assets.Scripts.Data.World;
+using Assets.Scripts.Game.Scenes.Types;
 using Assets.Scripts.Game.Services;
 using Assets.Scripts.Models.Entities;
 
@@ -22,8 +23,7 @@ namespace Assets.Scripts.Models.Services
 
         public void FailSession()
         {
-            _loading.LoadScene(WorldData.FailScene,
-                (services, scene) => { });
+            _loading.LoadScene(new FailSceneData.Loader(WorldData.FailScene));
         }
     }
 }

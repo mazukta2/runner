@@ -29,12 +29,10 @@ namespace Assets.Scripts.Components.Core
         {
             _services = new ServicesSystem();
 
-            _services.Add(new GameService(this));
             var loading = new GameLoadingService(this);
             _services.Add(loading);
-            _services.Add(new UpdaterService(this));
 
-            loading.LoadScene(_firstScene, (s, v) => v.Init(_services));
+            loading.LoadScene(new MainMenuSceneData.Loader(_firstScene));
         }
     }
 }

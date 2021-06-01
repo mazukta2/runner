@@ -35,5 +35,10 @@ namespace Assets.Scripts.Components.Core
 
             _services.Remove(service.GetType());
         }
+
+        public void Clear()
+        {
+            _services.Clear();
+        }
     }
 }

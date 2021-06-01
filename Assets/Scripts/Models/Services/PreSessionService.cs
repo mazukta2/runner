@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Data.Characters;
 using Assets.Scripts.Data.World;
+using Assets.Scripts.Game.Scenes.Types;
 using Assets.Scripts.Game.Services;
 
 namespace Assets.Scripts.Models.Services
@@ -28,8 +29,7 @@ namespace Assets.Scripts.Models.Services
 
         public void StartSession()
         {
-            _loading.LoadScene(SelectedWorldData.Scene,
-                (services, scene) => scene.Init(services, this));
+            _loading.LoadScene(new LevelSceneData.Loader(SelectedWorldData.Scene, this));
         }
     }
 }
